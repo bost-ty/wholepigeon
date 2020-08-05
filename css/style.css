@@ -1,0 +1,19 @@
+/* SETUP */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* VARIABLES */
+:root {
+  --maximum-yellow-red: hsla(40, 71%, 64%, 1);
+  --middle-red: hsla(11, 57%, 67%, 1);
+  --languid-lavender: hsla(251, 29%, 86%, 1);
+  --xanadu: hsla(108, 4%, 49%, 1);
+  --gunmetal: hsla(204, 24%, 16%, 1);
+}
+
+/* INDEX.HTML */
+body.index {
+}
