@@ -29,12 +29,13 @@ $size-m: 2.25rem;
 $size-s: 1.5rem;
 $size-xs: 0.75rem;
 $size-xxs: 0.5rem;
+$size-tiny: 0.3rem;
 
 $font-heading: Comfortaa, monospace;
 $font-copy: "Work Sans", sans-serif;
 
-$link-shadow: inset 0 -0.4em 0px $maximum-yellow-red;
-$link-shadow-hover: inset 0 -1em 0 $maximum-yellow-red;
+$link-shadow: inset 0 -0.4em 0px $xanadu;
+$link-shadow-hover: inset 0 -1.2em 0 $xanadu;
 
 $shadow-xs: 0 0 0 1px rgba(0, 0, 0, 0.05);
 $shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -59,11 +60,14 @@ $shadow-xxl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 /*--*/
 
 /* General */
+
 body {
   background: $languid-lavender;
   color: $gunmetal;
-  font-size: $size-s;
+  font-size: $size-m;
   font-family: $font-copy;
+  // overflow-x: hidden;
+  // position: relative;
 }
 
 section {
@@ -72,9 +76,9 @@ section {
   &::after {
     content: "";
     @include waves-up;
-    height: 320px;
+    height: 20rem;
     width: 100%;
-    margin-top: -10rem;
+    margin-top: -16rem;
     z-index: -9999;
   }
 }
@@ -95,6 +99,15 @@ h2 {
   margin-bottom: 0;
 }
 
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: $size-xl;
+  }
+  h2 {
+    font-size: $size-l;
+  }
+}
+
 .divider-up {
   @include waves-up;
   height: 300px;
@@ -103,14 +116,15 @@ h2 {
   padding: 0;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(autofit, minmax(300px, 1fr));
-  img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-  }
+$blob-radius-outer: 75% 63% 52% 68% / 39% 66% 77% 69%;
+$blob-radius-inner: 29% 41% 21% 46% / 23% 32% 30% 24%;
+
+@mixin card {
+  background-color: $xanadu;
+  box-shadow: $shadow-md;
+  border-radius: $blob-radius-outer;
+  padding: $size-l;
+  max-width: 90vw;
 }
 
 /* Header */
@@ -120,6 +134,7 @@ header {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+  display: grid;
   svg > * {
     fill: $gunmetal;
   }
@@ -134,6 +149,7 @@ header {
         padding: 0.5rem;
         margin: 1rem;
         a {
+          display: inline-flex;
           font-size: $size-m;
           font-family: $font-copy;
           color: $gunmetal;
@@ -144,6 +160,8 @@ header {
 
           &:hover {
             box-shadow: $link-shadow-hover;
+            transform: rotate(1deg);
+            color: $languid-lavender;
           }
         }
       }
@@ -162,16 +180,32 @@ main {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  img {
-    max-width: 600px;
-    min-width: 50%;
-    width: 100%;
-    height: auto;
-    border-radius: $size-xxs;
-    box-shadow: $shadow-lg;
+  div {
+    display: flex;
+    align-items: center;
+    padding: 0 $size-m;
+    @media screen and (max-width: 700px) {
+      flex-flow: column nowrap;
+    }
+    p {
+      margin: $size-m;
+      text-align: center;
+    }
+    .card {
+      @include card;
+      padding: $size-l;
+      min-width: 50vw;
+      max-width: 90vw;
+      img {
+        width: 100%;
+        height: auto;
+        box-shadow: $shadow-xl;
+        border-radius: $blob-radius-inner;
+        border: $size-tiny $maximum-yellow-red solid;
+      }
+    }
   }
 }
-
 .work {
   @include waves-down;
   display: flex;
@@ -183,9 +217,102 @@ main {
     margin-left: 1rem;
   }
   p {
-    margin-top: 1rem;
+    margin: $size-m;
     text-align: center;
+  }
+  .center {
+    margin: 0 2rem;
+    padding: $size-xl;
+    box-shadow: $shadow-lg;
+    background-color: $xanadu;
+    border-radius: $blob-radius-outer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(10px, 1fr));
+      grid-template-rows: repeat(2, 25vw);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 300ms ease-in-out;
+        padding: $size-tiny;
+        background-color: $maximum-yellow-red;
+
+        &:first-child {
+          border-top-left-radius: 50% 25%;
+        }
+
+        &:nth-child(3) {
+          border-top-right-radius: 20% 40%;
+        }
+
+        &:nth-child(4) {
+          border-bottom-left-radius: 45% 25%;
+        }
+
+        &:last-child {
+          border-bottom-right-radius: 45% 20%;
+        }
+      }
+
+      @media screen and (max-width: 700px) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-rows: none;
+        grid-gap: 1rem;
+
+        img {
+          border-radius: $size-xxs;
+          box-shadow: $shadow-md;
+
+          &:first-child {
+            border-radius: 20% 45% $size-xxs $size-xxs;
+          }
+
+          &:nth-child(3) {
+            border-radius: $size-xxs;
+          }
+
+          &:nth-child(4) {
+            border-radius: $size-xxs;
+          }
+
+          &:last-child {
+            border-radius: $size-xxs $size-xxs 25% 50%;
+          }
+        }
+      }
+    }
   }
 }
 
 /* ------------- */
+@media screen and (max-width: 520px) {
+  header svg {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  :root {
+    font-size: 14px;
+  }
+  .work .center {
+    max-width: 100vw;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  :root {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  :root {
+    font-size: 12px;
+  }
+}
