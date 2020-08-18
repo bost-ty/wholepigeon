@@ -1,0 +1,213 @@
+/*--*/
+/*--*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* > * {
+  margin: 0;
+  padding: 0;
+}
+
+/*--*/
+/* General */
+body {
+  background: #d5d1e6;
+  color: #1f2b33;
+  font-size: 1.5rem;
+  font-family: "Work Sans", sans-serif;
+}
+
+section {
+  width: 100%;
+}
+
+section::after {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 319' transform='rotate(0) scale(1)'%3E%3Cpath fill='hsl(40, 71%, 64%)' fill-opacity='1' d='M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100%;
+  height: 320px;
+  width: 100%;
+  margin-top: -10rem;
+  z-index: -9999;
+}
+
+h1 {
+  font-size: 5rem;
+  font-family: Comfortaa, monospace;
+  font-weight: 300;
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 4.25rem;
+  font-family: Comfortaa, monospace;
+  font-weight: 300;
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.divider-up {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 319' transform='rotate(0) scale(1)'%3E%3Cpath fill='hsl(40, 71%, 64%)' fill-opacity='1' d='M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100%;
+  height: 300px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[autofit];
+      grid-template-columns: repeat(autofit, minmax(300px, 1fr));
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+/* Header */
+header {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 319' transform='rotate(180)'%3E%3Cpath fill='hsl(40, 71%, 64%)' fill-opacity='1' d='M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header svg > * {
+  fill: #1f2b33;
+}
+
+header nav ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header nav ul li {
+  display: inline-block;
+  padding: 0.5rem;
+  margin: 1rem;
+}
+
+header nav ul li a {
+  font-size: 2.25rem;
+  font-family: "Work Sans", sans-serif;
+  color: #1f2b33;
+  text-decoration: none;
+  -webkit-box-shadow: inset 0 -0.4em 0px #e4b962;
+          box-shadow: inset 0 -0.4em 0px #e4b962;
+  -webkit-transition: all ease-in-out 100ms;
+  transition: all ease-in-out 100ms;
+  font-weight: 600;
+}
+
+header nav ul li a:hover {
+  -webkit-box-shadow: inset 0 -1em 0 #e4b962;
+          box-shadow: inset 0 -1em 0 #e4b962;
+}
+
+/* Main */
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* each section */
+.landing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.landing img {
+  max-width: 600px;
+  min-width: 50%;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.work {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 319' transform='rotate(180)'%3E%3Cpath fill='hsl(40, 71%, 64%)' fill-opacity='1' d='M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.work h2 {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-left: 1rem;
+}
+
+.work p {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* ------------- */
+/*# sourceMappingURL=main.css.map */

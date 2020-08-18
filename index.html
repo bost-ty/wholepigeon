@@ -8,62 +8,78 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/main.css" />
     <title>Wholepigeon Embroidery</title>
   </head>
-  <body class="index">
-    <header>
-      <nav role="navigation">
-        <div id="menuToggle">
-          <!-- A fake / hidden checkbox is used as click reciever, so you can use the :checked selector on it. -->
-          <input type="checkbox" />
-          <!-- Some spans to act as a hamburger. They are acting like a real hamburger, not that McDonalds stuff. -->
-          <span></span>
-          <span></span>
-          <span></span>
-          <!-- Too bad the menu has to be inside of the button but hey, it's pure CSS magic. -->
-          <ul id="menu">
-            <a href="/"><li>Home</li></a>
-            <a href="/about"><li>Our Work</li></a>
-            <a href="/order"><li>Order Now</li></a>
-          </ul>
-        </div>
+  <body>
+    <header id="header">
+      <h1 class="header-title">
+        <svg
+          id="thread-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          aria-hidden="true"
+          focusable="false"
+          width="1.07em"
+          height="1em"
+          style="
+            -ms-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+          "
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 17 16"
+        >
+          <g fill-rule="evenodd">
+            <path
+              d="M12.982.986c0 .518-.41.938-.917.938h-10a.927.927 0 0 1-.917-.938c0-.519.41-.938.917-.938h10c.507 0 .917.42.917.938z"
+            />
+            <path
+              d="M12.982 14.986c0 .518-.41.938-.917.938h-10a.927.927 0 0 1-.917-.938c0-.519.41-.938.917-.938h10c.507 0 .917.42.917.938z"
+            />
+            <path d="M3 3h7.917v.959H3z" />
+            <path d="M3 5h7.917v.959H3z" />
+            <path d="M3 7h7.917v.959H3z" />
+            <path d="M3 9h7.917v.959H3z" />
+            <path d="M3 11h7.917v.959H3z" />
+            <path d="M3 13h7.917v.959H3z" />
+            <path
+              d="M16.836 15c-1.305-.208-1.679-2.154-1.78-2.98c-.088-.716-.181-4.562-2.383-5.545c-.612-.273-1.293-.402-1.878-.459c-.513-.052-.685-.039-.629-.098l-.748-.682c.294-.307.838-.28 1.418-.219c.734.07 1.518.212 2.21.529c2.621 1.203 2.949 5.732 3.024 6.354c.14 1.144.539 2.053.93 2.114l-.164.986z"
+            />
+          </g></svg
+        >wholepigeon
+      </h1>
+      <nav class="navigation">
+        <ul>
+          <li><a href="#">our work</a></li>
+          <li><a href="#">order now</a></li>
+        </ul>
       </nav>
     </header>
-    <main>
-      <section class="hero">
-        <h1>wholepigeon embroidery</h1>
-        <p>don't live half pigeon <span>🕊</span></p>
+
+    <main id="main">
+      <section class="landing" id="landing">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde, voluptatum.</p>
+        <img
+          class="landing-image"
+          src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80"
+          alt="image"
+        />
       </section>
-      <section class="landing landing-work">
-        <p>
-          Lorem ipsum dolor sit amet.
-        </p>
-        <p>
-          WHOAOAA Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda aspernatur eos
-          laudantium sit architecto aperiam quis dolore deserunt itaque numquam! Lorem ipsum dolor
-          sit amet, consectetur adipisicing elit. Architecto repellat ut autem, odit necessitatibus
-          error facilis itaque cum, velit ipsum soluta sit tenetur perspiciatis ducimus mollitia
-          doloremque possimus rerum sed.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias fugiat quos dolorum
-          natus sequi repudiandae aliquam tenetur architecto libero id.
-        </p>
-      </section>
-      <section class="landing landing-order">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias fugiat quos dolorum
-          natus sequi repudiandae aliquam tenetur architecto libero id.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias fugiat quos dolorum
-          natus sequi repudiandae aliquam tenetur architecto libero id.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias fugiat quos dolorum
-          natus sequi repudiandae aliquam tenetur architecto libero id.
-        </p>
+
+      <!-- <div class="divider-up"></div> -->
+
+      <section class="work" id="work">
+        <h2>our work</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, possimus!</p>
+        <div class="image-grid">
+          <img src="https://source.unsplash.com/300x300" alt="image" />
+          <img src="https://source.unsplash.com/600x400" alt="image" />
+          <img src="https://source.unsplash.com/400x600" alt="image" />
+          <img src="https://source.unsplash.com/320x300" alt="image" />
+          <img src="https://source.unsplash.com/450x300" alt="image" />
+          <img src="https://source.unsplash.com/200x200" alt="image" />
+        </div>
       </section>
     </main>
   </body>

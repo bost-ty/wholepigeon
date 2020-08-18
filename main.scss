@@ -1,0 +1,191 @@
+// @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Work+Sans&display=swap");
+
+/*--*/
+@mixin waves-down {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 319' transform='rotate(180)'%3E%3Cpath fill='hsl(40, 71%, 64%)' fill-opacity='1' d='M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100%;
+}
+
+@mixin waves-up {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 319' transform='rotate(0) scale(1)'%3E%3Cpath fill='hsl(40, 71%, 64%)' fill-opacity='1' d='M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100%;
+}
+
+$maximum-yellow-red: hsl(40, 71%, 64%);
+$middle-red: hsl(11, 57%, 67%);
+$languid-lavender: hsl(251, 29%, 86%);
+$xanadu: hsl(108, 4%, 49%);
+$gunmetal: hsl(204, 24%, 16%);
+$light-white: hsl(0, 0%, 83%);
+
+$size-xxl: 5rem;
+$size-xl: 4.25rem;
+$size-l: 3rem;
+$size-m: 2.25rem;
+$size-s: 1.5rem;
+$size-xs: 0.75rem;
+$size-xxs: 0.5rem;
+
+$font-heading: Comfortaa, monospace;
+$font-copy: "Work Sans", sans-serif;
+
+$link-shadow: inset 0 -0.4em 0px $maximum-yellow-red;
+$link-shadow-hover: inset 0 -1em 0 $maximum-yellow-red;
+
+$shadow-xs: 0 0 0 1px rgba(0, 0, 0, 0.05);
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+$shadow-xxl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+/*--*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+* > * {
+  margin: 0;
+  padding: 0;
+}
+/*--*/
+
+/* General */
+body {
+  background: $languid-lavender;
+  color: $gunmetal;
+  font-size: $size-s;
+  font-family: $font-copy;
+}
+
+section {
+  width: 100%;
+
+  &::after {
+    content: "";
+    @include waves-up;
+    height: 320px;
+    width: 100%;
+    margin-top: -10rem;
+    z-index: -9999;
+  }
+}
+
+h1 {
+  font-size: $size-xxl;
+  font-family: $font-heading;
+  font-weight: 300;
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: $size-xl;
+  font-family: $font-heading;
+  font-weight: 300;
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.divider-up {
+  @include waves-up;
+  height: 300px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(autofit, minmax(300px, 1fr));
+  img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+}
+
+/* Header */
+header {
+  @include waves-down;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  svg > * {
+    fill: $gunmetal;
+  }
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      li {
+        display: inline-block;
+        padding: 0.5rem;
+        margin: 1rem;
+        a {
+          font-size: $size-m;
+          font-family: $font-copy;
+          color: $gunmetal;
+          text-decoration: none;
+          box-shadow: $link-shadow;
+          transition: all ease-in-out 100ms;
+          font-weight: 600;
+
+          &:hover {
+            box-shadow: $link-shadow-hover;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Main */
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+/* each section */
+.landing {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  img {
+    max-width: 600px;
+    min-width: 50%;
+    width: 100%;
+    height: auto;
+    border-radius: $size-xxs;
+    box-shadow: $shadow-lg;
+  }
+}
+
+.work {
+  @include waves-down;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    align-self: flex-start;
+    margin-left: 1rem;
+  }
+  p {
+    margin-top: 1rem;
+    text-align: center;
+  }
+}
+
+/* ------------- */
