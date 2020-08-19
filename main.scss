@@ -1,5 +1,3 @@
-// @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Work+Sans&display=swap");
-
 /*--*/
 @mixin waves-down {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 319' transform='rotate(180)'%3E%3Cpath fill='hsl(40, 71%, 64%)' fill-opacity='1' d='M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
@@ -15,11 +13,37 @@
   background-size: 100%;
 }
 
+@mixin card {
+  background-color: $xanadu;
+  box-shadow: $shadow-md;
+  border-radius: $blob-radius-outer;
+  padding: $size-l;
+  min-width: 50vw;
+  max-width: 90vw;
+}
+
+@mixin default-link {
+  display: block;
+  font-size: $size-m;
+  font-family: $font-copy;
+  color: $gunmetal;
+  text-decoration: none;
+  box-shadow: $link-shadow;
+  transition: all ease-in-out 100ms;
+  font-weight: 600;
+
+  &:hover {
+    box-shadow: $link-shadow-hover;
+    transform: rotate(1deg);
+    color: $languid-lavender;
+  }
+}
+
 $maximum-yellow-red: hsl(40, 71%, 64%);
 $middle-red: hsl(11, 57%, 67%);
 $languid-lavender: hsl(251, 29%, 86%);
 $xanadu: hsl(108, 4%, 49%);
-$gunmetal: hsl(204, 24%, 16%);
+$gunmetal: hsl(204, 24%, 12%);
 $light-white: hsl(0, 0%, 83%);
 
 $size-xxl: 5rem;
@@ -37,13 +61,13 @@ $font-copy: "Work Sans", sans-serif;
 $link-shadow: inset 0 -0.4em 0px $xanadu;
 $link-shadow-hover: inset 0 -1.2em 0 $xanadu;
 
-$shadow-xs: 0 0 0 1px rgba(0, 0, 0, 0.05);
-$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-$shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-$shadow-xxl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+$shadow-xs: 0 0 0 1px rgba(0, 0, 0, 0.08);
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+$shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.07);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.06);
+$shadow-xxl: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
 
 /*--*/
 *,
@@ -57,17 +81,21 @@ $shadow-xxl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   margin: 0;
   padding: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+  @media (prefers-reduced-motion) {
+    scroll-behavior: initial;
+  }
+}
 /*--*/
 
 /* General */
-
 body {
   background: $languid-lavender;
   color: $gunmetal;
   font-size: $size-m;
   font-family: $font-copy;
-  // overflow-x: hidden;
-  // position: relative;
 }
 
 section {
@@ -119,14 +147,6 @@ h2 {
 $blob-radius-outer: 75% 63% 52% 68% / 39% 66% 77% 69%;
 $blob-radius-inner: 29% 41% 21% 46% / 23% 32% 30% 24%;
 
-@mixin card {
-  background-color: $xanadu;
-  box-shadow: $shadow-md;
-  border-radius: $blob-radius-outer;
-  padding: $size-l;
-  max-width: 90vw;
-}
-
 /* Header */
 header {
   @include waves-down;
@@ -149,20 +169,7 @@ header {
         padding: 0.5rem;
         margin: 1rem;
         a {
-          display: inline-flex;
-          font-size: $size-m;
-          font-family: $font-copy;
-          color: $gunmetal;
-          text-decoration: none;
-          box-shadow: $link-shadow;
-          transition: all ease-in-out 100ms;
-          font-weight: 600;
-
-          &:hover {
-            box-shadow: $link-shadow-hover;
-            transform: rotate(1deg);
-            color: $languid-lavender;
-          }
+          @include default-link;
         }
       }
     }
@@ -193,9 +200,6 @@ main {
     }
     .card {
       @include card;
-      padding: $size-l;
-      min-width: 50vw;
-      max-width: 90vw;
       img {
         width: 100%;
         height: auto;
@@ -214,7 +218,7 @@ main {
   justify-content: center;
   h2 {
     align-self: flex-start;
-    margin-left: 1rem;
+    margin-left: $size-xxl;
   }
   p {
     margin: $size-m;
@@ -287,6 +291,68 @@ main {
       }
     }
   }
+}
+
+.order {
+  @include waves-down;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    align-self: flex-start;
+    margin-left: $size-xxl;
+  }
+  p {
+    margin: $size-m;
+    text-align: center;
+    max-width: 60vw;
+  }
+  .container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+    p {
+      min-width: 70vw;
+      font-size: $size-s;
+      padding: 0;
+      margin: $size-xxs 0 $size-s 0;
+    }
+    .cta {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a {
+        @include default-link;
+        text-align: center;
+        padding: $size-s;
+        margin: $size-s $size-m $size-xl;
+        padding: 0 2rem;
+      }
+    }
+    .card {
+      @include card;
+      padding: $size-l;
+      min-width: 50vw;
+      max-width: 90vw;
+      .order-image {
+        width: 100%;
+        height: auto;
+        box-shadow: $shadow-xl;
+        border-radius: $blob-radius-inner;
+        border: $size-tiny $maximum-yellow-red solid;
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  background-color: $maximum-yellow-red;
+  padding: $size-m;
+  font-size: $size-s;
 }
 
 /* ------------- */
