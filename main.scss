@@ -140,14 +140,6 @@ h2 {
   }
 }
 
-.divider-up {
-  @include waves-up;
-  height: 300px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 $blob-radius-outer: 75% 63% 52% 68% / 39% 66% 77% 69%;
 $blob-radius-inner: 29% 41% 21% 46% / 23% 32% 30% 24%;
 
