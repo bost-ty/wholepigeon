@@ -7,7 +7,7 @@
 }
 
 @mixin waves-up {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 319' transform='rotate(360)'%3E%3Cpath fill='%23e4b962' fill-opacity='1' d='M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 319'%3E%3Cpath fill='%23e4b962' fill-opacity='1' d='M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 100%;
@@ -32,8 +32,9 @@
   transition: all ease-in-out 100ms;
   font-weight: 600;
   text-align: center;
+  padding: 0;
+  margin: $size-s;
   @media screen and (max-width: 700px) {
-    padding: 0;
     margin: $size-xs;
   }
   @media screen and (max-width: 410px) {
@@ -45,6 +46,10 @@
     transform: rotate(1deg);
     color: $languid-lavender;
   }
+}
+
+.smaller {
+  font-size: calc(1em * 0.675);
 }
 
 $maximum-yellow-red: hsl(40, 71%, 64%);
@@ -108,6 +113,7 @@ body {
 
 section {
   width: 100%;
+  margin-bottom: -1px;
 
   &::after {
     content: "";
@@ -197,12 +203,16 @@ main {
     display: flex;
     align-items: center;
     padding: 0 $size-m;
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 1200px) {
       flex-flow: column nowrap;
     }
-    p {
-      margin: $size-m;
-      text-align: center;
+    .landing-text {
+      display: flex;
+      flex-flow: column nowrap;
+      p {
+        margin: $size-m;
+        text-align: center;
+      }
     }
     .card {
       @include card;
@@ -330,9 +340,9 @@ a {
 footer {
   text-align: center;
   background-color: $maximum-yellow-red;
-  padding: $size-m;
+  padding: $size-xs;
   font-size: $size-s;
-  margin-top: -$size-s;
+  // margin-top: $size-s;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -342,9 +352,15 @@ footer {
     display: flex;
     flex-flow: column nowrap;
     margin-bottom: 0;
-    a {
-      @include default-link;
-      font-size: inherit;
+    justify-content: space-between;
+    align-items: center;
+    span {
+      a {
+        @include default-link;
+        font-size: inherit;
+        margin-bottom: $size-xs;
+        padding: 0;
+      }
     }
   }
 }
