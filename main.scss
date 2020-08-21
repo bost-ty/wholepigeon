@@ -23,7 +23,7 @@
 }
 
 @mixin default-link {
-  display: block;
+  display: inline-block;
   font-size: $size-m;
   font-family: $font-copy;
   color: $gunmetal;
@@ -31,6 +31,14 @@
   box-shadow: $link-shadow;
   transition: all ease-in-out 100ms;
   font-weight: 600;
+  text-align: center;
+  @media screen and (max-width: 700px) {
+    padding: 0;
+    margin: $size-xs;
+  }
+  @media screen and (max-width: 410px) {
+    margin: $size-xxs;
+  }
 
   &:hover {
     box-shadow: $link-shadow-hover;
@@ -117,6 +125,7 @@ h1 {
   font-weight: 300;
   margin-top: 1em;
   margin-bottom: 0;
+  text-align: center;
 }
 
 h2 {
@@ -129,6 +138,7 @@ h2 {
   border-bottom: 4px $maximum-yellow-red solid;
   display: inline-block;
   line-height: 0.6;
+  text-align: center;
 }
 
 @media screen and (max-width: 700px) {
@@ -161,8 +171,8 @@ header {
       align-items: center;
       justify-content: center;
       li {
-        display: inline-block;
-        padding: 0.5rem;
+        // display: inline-block;
+        // padding: 0.5rem;
         margin: 1rem;
         a {
           @include default-link;
@@ -289,57 +299,30 @@ main {
   }
 }
 
+a {
+  @include default-link;
+  text-align: center;
+  padding: $size-s;
+  margin: $size-s $size-m $size-xl;
+  padding: 0 2rem;
+}
+
 .order {
   @include waves-down;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  justify-content: center;
-  h2 {
-    align-self: flex-start;
-    margin-left: $size-xxl;
-  }
-  p {
-    margin: $size-m;
-    text-align: center;
-    max-width: 60vw;
-  }
-  .container {
+  div {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    width: 100%;
+    padding: 0 $size-m;
     p {
-      min-width: 70vw;
-      font-size: $size-s;
-      padding: 0;
-      margin: $size-xxs 0 $size-s 0;
+      margin: $size-m;
+      text-align: center;
     }
-    .cta {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      a {
-        @include default-link;
-        text-align: center;
-        padding: $size-s;
-        margin: $size-s $size-m $size-xl;
-        padding: 0 2rem;
-      }
-    }
-    .card {
-      @include card;
-      padding: $size-l;
-      min-width: 50vw;
-      max-width: 90vw;
-      .order-image {
-        width: 100%;
-        height: auto;
-        box-shadow: $shadow-xl;
-        border-radius: $blob-radius-inner;
-        border: $size-tiny $maximum-yellow-red solid;
-      }
+    a {
+      @include default-link;
     }
   }
 }
@@ -350,6 +333,25 @@ footer {
   padding: $size-m;
   font-size: $size-s;
   margin-top: -$size-s;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  div {
+    font-size: $size-s;
+    display: flex;
+    flex-flow: column nowrap;
+    margin-bottom: 0;
+    a {
+      @include default-link;
+      font-size: inherit;
+    }
+  }
+}
+
+.logo {
+  max-width: 50px;
+  max-height: 50px;
 }
 
 /* ------------- */
@@ -377,5 +379,17 @@ footer {
 @media screen and (max-width: 360px) {
   :root {
     font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  :root {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  :root {
+    font-size: 10px;
   }
 }
