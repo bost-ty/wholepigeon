@@ -259,7 +259,8 @@ main {
         object-fit: cover;
         padding: $size-tiny;
         background-color: $maximum-yellow-red;
-        transition: all ease-in-out 300ms;
+        transition: all ease-out 300ms;
+        box-shadow: $shadow-sm;
 
         &:first-child {
           border-top-left-radius: 50% 25%;
@@ -278,8 +279,9 @@ main {
         }
         &:hover {
           cursor: pointer;
-          transform: scale(1.01);
+          transform: scale(1.05);
           border-radius: $size-xxs;
+          box-shadow: $shadow-lg;
         }
       }
 
