@@ -304,31 +304,38 @@ main {
       grid-template-rows: repeat(2, 25vw);
 }
 
-.work .center .image-grid img {
+.work .center .image-grid .grid-item {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
   padding: 0.3rem;
   background-color: #e4b962;
+  -webkit-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms;
 }
 
-.work .center .image-grid img:first-child {
+.work .center .image-grid .grid-item:first-child {
   border-top-left-radius: 50% 25%;
 }
 
-.work .center .image-grid img:nth-child(3) {
+.work .center .image-grid .grid-item:nth-child(3) {
   border-top-right-radius: 20% 40%;
 }
 
-.work .center .image-grid img:nth-child(4) {
+.work .center .image-grid .grid-item:nth-child(4) {
   border-bottom-left-radius: 45% 25%;
 }
 
-.work .center .image-grid img:last-child {
+.work .center .image-grid .grid-item:last-child {
   border-bottom-right-radius: 45% 20%;
+}
+
+.work .center .image-grid .grid-item:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  border-radius: 0.5rem;
 }
 
 @media screen and (max-width: 700px) {
@@ -356,46 +363,6 @@ main {
   .work .center .image-grid img:last-child {
     border-radius: 0.5rem 0.5rem 25% 50%;
   }
-}
-
-a {
-  display: inline-block;
-  font-size: 2.25rem;
-  font-family: "Work Sans", sans-serif;
-  color: #172026;
-  text-decoration: none;
-  -webkit-box-shadow: inset 0 -0.4em 0px #7a8278;
-          box-shadow: inset 0 -0.4em 0px #7a8278;
-  -webkit-transition: all ease-in-out 100ms;
-  transition: all ease-in-out 100ms;
-  font-weight: 600;
-  text-align: center;
-  padding: 0;
-  margin: 1.5rem;
-  text-align: center;
-  padding: 1.5rem;
-  margin: 1.5rem 2.25rem 4.25rem;
-  padding: 0 2rem;
-}
-
-@media screen and (max-width: 700px) {
-  a {
-    margin: 0.75rem;
-  }
-}
-
-@media screen and (max-width: 410px) {
-  a {
-    margin: 0.5rem;
-  }
-}
-
-a:hover {
-  -webkit-box-shadow: inset 0 -1.2em 0 #7a8278;
-          box-shadow: inset 0 -1.2em 0 #7a8278;
-  -webkit-transform: rotate(1deg);
-          transform: rotate(1deg);
-  color: #d5d1e6;
 }
 
 .order {

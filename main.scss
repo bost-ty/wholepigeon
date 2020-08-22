@@ -253,14 +253,13 @@ main {
       display: grid;
       grid-template-columns: repeat(3, minmax(10px, 1fr));
       grid-template-rows: repeat(2, 25vw);
-
-      img {
+      .grid-item {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: all 300ms ease-in-out;
         padding: $size-tiny;
         background-color: $maximum-yellow-red;
+        transition: all ease-in-out 300ms;
 
         &:first-child {
           border-top-left-radius: 50% 25%;
@@ -276,6 +275,11 @@ main {
 
         &:last-child {
           border-bottom-right-radius: 45% 20%;
+        }
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.01);
+          border-radius: $size-xxs;
         }
       }
 
@@ -307,14 +311,6 @@ main {
       }
     }
   }
-}
-
-a {
-  @include default-link;
-  text-align: center;
-  padding: $size-s;
-  margin: $size-s $size-m $size-xl;
-  padding: 0 2rem;
 }
 
 .order {
