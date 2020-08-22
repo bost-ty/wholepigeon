@@ -1,16 +1,11 @@
 # wholepigeon
 
-The website for Wholepigeon Embroidery.
+This is the website for Wholepigeon Embroidery.
 
-To be implemented:
+[Wholepigeon is on Instagram](https://instagram.com/wholepigeon).
 
-- [X] Custom layout
-- [X] Color scheme
-~~- [ ] Fixed hamburger menu - responsive? // cancelled~~
-- [ ] Forms! Probably via Netlify or just a Google Form link (but that's no fun.) // Google Form
-- [ ] Actual copy and images
+Designed and coded by [@bost-ty](https://github.com/bost-ty/).
 
-To fix:
+Wholepigeon is custom embroidery on the clothes you like, something made just for you. Personalize your favorite hoodie, get a new t-shirt, revive your old jeans, send a message with your mask.
 
-- [ ] Unrotated SVGs in the url() for top `background-image`s.
-- [ ] Spacing in the footer with the new links 
+Wholepigeon will make something up for you if you don't want anything specific. This is the best way.

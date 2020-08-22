@@ -300,8 +300,8 @@ main {
   display: grid;
   -ms-grid-columns: (minmax(10px, 1fr)) [3];
   grid-template-columns: repeat(3, minmax(10px, 1fr));
-  -ms-grid-rows: (25vw) [2];
-  grid-template-rows: repeat(2, 25vw);
+  -ms-grid-rows: (20vw) [2];
+  grid-template-rows: repeat(2, 20vw);
 }
 
 .work .center .image-grid .grid-item {
@@ -350,21 +350,21 @@ main {
     grid-template-rows: none;
     grid-gap: 1rem;
   }
-  .work .center .image-grid img {
+  .work .center .image-grid .grid-item {
     border-radius: 0.5rem;
     -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.08);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.08);
   }
-  .work .center .image-grid img:first-child {
+  .work .center .image-grid .grid-item:first-child {
     border-radius: 20% 45% 0.5rem 0.5rem;
   }
-  .work .center .image-grid img:nth-child(3) {
+  .work .center .image-grid .grid-item:nth-child(3) {
     border-radius: 0.5rem;
   }
-  .work .center .image-grid img:nth-child(4) {
+  .work .center .image-grid .grid-item:nth-child(4) {
     border-radius: 0.5rem;
   }
-  .work .center .image-grid img:last-child {
+  .work .center .image-grid .grid-item:last-child {
     border-radius: 0.5rem 0.5rem 25% 50%;
   }
 }
