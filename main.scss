@@ -333,6 +333,14 @@ a {
     }
     a {
       @include default-link;
+      font-size: calc(1em * 0.9);
+    }
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 128px;
+      margin: $size-m;
+      padding: $size-xs;
     }
   }
 }
